@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Public+Sans:wght@400;500;700&display=swap");
+
+.triada {
+  --tinta: #0f1b2d; --suave: #43536b; --fondo: #eef2f6; --papel: #fff;
+  box-sizing: border-box; max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+  background: var(--fondo); color: var(--tinta); text-align: left;
+  font-family: "Public Sans", system-ui, sans-serif; line-height: 1.55;
+}
+.triada h1, .triada h2, .triada h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.12; margin: 0; }
+
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; max-width: 17ch; }
+.hero p { margin: 1rem 0 2.5rem; max-width: 60ch; color: var(--suave); font-size: 1.08rem; }
+
+.explorador { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center; }
+.figura svg { width: 100%; height: auto; display: block; }
+.tri { fill: var(--papel); stroke: var(--tinta); stroke-width: .6; stroke-linejoin: round; }
+.centro { font: 800 4.6px "Fraunces", serif; fill: var(--tinta); }
+.centro-sub { font-size: 3.2px; fill: var(--suave); }
+.nodo { cursor: pointer; outline: none; }
+.nodo circle { transition: r .2s ease; stroke: var(--papel); stroke-width: 1.2; }
+.nodo--activo circle { r: 11; }
+.nodo:focus-visible circle { stroke: var(--tinta); stroke-width: 1.6; }
+.sigla { fill: #fff; font: 800 7px "Fraunces", serif; pointer-events: none; }
+
+.leyenda { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.leyenda button { font: 600 .95rem "Public Sans", sans-serif; padding: .45rem .95rem; border-radius: 999px;
+  border: 2px solid var(--c); background: transparent; color: var(--tinta); cursor: pointer; }
+.leyenda button.activo { background: var(--c); color: #fff; }
+.leyenda button:focus-visible { outline: 3px solid var(--tinta); outline-offset: 2px; }
+
+.resumen { background: var(--papel); border-left: 8px solid var(--acento); padding: 1.6rem; border-radius: 4px 14px 14px 4px; }
+.resumen h2 { font-size: 2rem; font-weight: 800; color: var(--acento); margin-bottom: .6rem; }
+.idea { font-size: 1.15rem; margin: 0 0 1rem; }
+.pregunta { margin: 0; font-family: "Fraunces", serif; font-style: italic; font-size: 1.2rem; color: var(--suave); }
+
+.seccion { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 800; margin: 4rem 0 1.5rem; }
+
+.pilar { background: var(--papel); border-top: 6px solid var(--c); border-radius: 0 0 14px 14px; padding: 1.5rem; margin-bottom: 1.25rem; }
+.pilar__cab { display: flex; gap: 1rem; align-items: flex-start; }
+.pilar__sigla { flex: none; width: 3rem; height: 3rem; border-radius: 50%; background: var(--c); color: #fff;
+  display: grid; place-items: center; font: 800 1.5rem "Fraunces", serif; }
+.pilar h3 { font-size: 1.5rem; font-weight: 800; color: var(--c); margin-bottom: .3rem; }
+.pilar__cab p { margin: 0; max-width: 62ch; }
+.pilar__ej { margin: 1rem 0; padding: .8rem 1rem; background: var(--fondo); border-radius: 8px; max-width: 70ch; }
+.pilar__listas { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.pilar h4 { margin: 0 0 .4rem; font-size: 1rem; }
+.pilar ul { margin: 0; padding-left: 1.2rem; color: #2c3b52; }
+.pilar li { margin-bottom: .25rem; }
+
+.sub { margin: -.8rem 0 1.2rem; color: var(--suave); }
+.incidentes ul { list-style: none; margin: 0; padding: 0; background: var(--papel); border-radius: 14px; overflow: hidden; }
+.incidentes li { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem 1.2rem; border-bottom: 1px solid #dde4ec; }
+.incidentes li:last-child { border-bottom: 0; }
+.chips { display: flex; gap: .35rem; flex: none; }
+.chips b { width: 1.9rem; height: 1.9rem; border-radius: 50%; color: #fff; display: grid; place-items: center; font: 800 .95rem "Fraunces", serif; }
+
+.cierre p { max-width: 65ch; font-size: 1.1rem; margin: 0; }
+
+@media (max-width: 720px) {
+  .explorador, .pilar__listas { grid-template-columns: 1fr; }
+  .incidentes li { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { .nodo circle { transition: none; } }
